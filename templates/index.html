@@ -1,0 +1,92 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Flash Report{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/style.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+{% endblock %}
+
+{% block content %}
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<h2>Flash PDF Upload</h2>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class=flashes style="color:red;">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+<form id="file-upload-form" class="uploader" method="post" action="{{url_for('main')}}" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    <div class="file-upload">
+      <div class="file-select">
+        <div class="file-select-button" id="fileName">Choose File</div>
+        <div class="file-select-name" id="noFile">No file chosen...</div>
+        {{ form.chooseFile }}
+      </div>
+    </div>
+    <br/>
+
+     {% if errors %}
+        <ul class=flashes style="color:red;">
+        {% for error in errors %}
+            <p>{{ error }}</p>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+{{form.submit(class_="btn-primary")}}
+</form>
+
+<br/>
+
+{% if accommodation_total: %}
+    {% for x in range(2): %}
+        <h5>{{ titles[x] }}</h5>
+        <table style="width:70%">
+          <tr>
+            <td>Sales Category</td>
+            <td>Net Sales</td>
+          </tr>
+          <tr>
+            <td>Accommodation</td>
+            <td>{{ accommodation_total[x] }}</td>
+          </tr>
+          <tr>
+            <td>Upgrades</td>
+            <td>{{ upgrade_total[x] }}</td>
+          </tr>
+          <tr>
+            <td>Parking</td>
+            <td>{{ parking_total[x] }}</td>
+          </tr>
+          <tr>
+            <td>Restaurant</td>
+            <td>{{ restaurant_total[x] }}</td>
+          </tr>
+          <tr>
+            <td>Totals:</td>
+            <td>{{ income_total[x] }}</td>
+          </tr>
+        </table>
+        <br/><br/>
+    {% endfor %}
+{% endif %}
+
+<!-- IGNORE -->
+<div class="copyright">
+  By Sabrian Jufenlindo
+</div>
+<!-- partial -->
+  <script  src="{{url_for('.static', filename='js/script.js')}}"></script>
+
+{% endblock %}
+
