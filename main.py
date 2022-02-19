@@ -6,6 +6,7 @@ from werkzeug.utils import secure_filename, redirect
 from wtforms import StringField, SubmitField, SelectField, validators
 from wtforms.validators import DataRequired, URL
 from flask_wtf.file import FileRequired, FileAllowed, FileField
+import datetime
 
 text = ""
 
@@ -121,14 +122,14 @@ def main():
                 return render_template("index.html", form=form, accommodation_total=accommodation_total,
                                        upgrade_total=upgrade_total, parking_total=parking_total,
                                        restaurant_total=restaurant_total, income_total=income_total,
-                                       titles=titles)
+                                       titles=titles, year=datetime.date.today().year)
             else:
                 return "<h1>Something is wrong</h1>"
         except ValueError:
             return "<h1>Only flash report is allowed</h1>"
     else:
         errors = form.chooseFile.errors
-        return render_template("index.html", form=form, errors=errors)
+        return render_template("index.html", form=form, errors=errors, year=datetime.date.today().year)
 
 
 if __name__ == '__main__':
