@@ -48,26 +48,16 @@ def main():
                 accommodation = []
                 early_check_in = accommodation.append(
                     float(data[data.index("Accom early check in") + index].replace(',', '')))
-                late_check_out = accommodation.append(
-                    float(data[data.index("Accom late check out") + index].replace(',', '')))
                 accom_revenue = accommodation.append(
                     float(data[data.index("Accommodation Revenue") + index].replace(',', '')))
-                accom_noshow = accommodation.append(
-                    float(data[data.index("Accommodation-No Show") + index].replace(',', '')))
-                courier = accommodation.append(float(data[data.index("Courier-on guest behalf") + index].replace(',', '')))
                 credit_card = accommodation.append(float(data[data.index("Credit card fees") + index].replace(',', '')))
                 dry_cleaning = accommodation.append(
                     float(data[data.index("Drycleaning / Laundry Charges") + index].replace(',', '')))
-                guest_attrition = accommodation.append(
-                    float(data[data.index("Guest Attrition Fees") + index].replace(',', '')))
-                guest_cancellation = accommodation.append(
-                    float(data[data.index("Guest Cancellation Fees") + index].replace(',', '')))
-                hotel_shop = accommodation.append(float(data[data.index("Hotel Shop Revenue") + index].replace(',', '')))
-                housekeeping_service = accommodation.append(
-                    float(data[data.index("Housekeeping Service") + index].replace(',', '')))
-                internet_charge = accommodation.append(float(data[data.index("Internet Charges") + index].replace(',', '')))
+
+
+
                 phone_charges = accommodation.append(float(data[data.index("Phone Charges") + index].replace(',', '')))
-                sofabed = accommodation.append(float(data[data.index("Sofa Bed") + index].replace(',', '')))
+
                 sundry = accommodation.append(float(data[data.index("Sundry Income") + index].replace(',', '')))
 
                 total = 0
@@ -83,30 +73,22 @@ def main():
                 parking_total.append(parking)
 
                 restaurant = []
-                child_bf = restaurant.append(
-                    float(data[data.index("Child Full cooked breakfast") + index].replace(',', '')))
+
                 all_day_beverage = restaurant.append(
                     float(data[data.index("Restaurant All Day Beverage") + index].replace(',', '')))
                 all_day_food = restaurant.append(
                     float(data[data.index("Restaurant All Day Food") + index].replace(',', '')))
-                box_bf = restaurant.append(
-                    float(data[data.index("Restaurant Box breakfast") + index].replace(',', '')))
+
                 bf_food = restaurant.append(
                     float(data[data.index("Restaurant Breakfast Food") + index].replace(',', '')))
                 dinner_beverage = restaurant.append(
                     float(data[data.index("Restaurant Dinner Beverage") + index].replace(',', '')))
                 dinner_food = restaurant.append(
                     float(data[data.index("Restaurant Dinner Food") + index].replace(',', '')))
-                lunch_beverage = restaurant.append(
-                    float(data[data.index("Restaurant Lunch Beverage") + index].replace(',', '')))
+
                 lunch_food = restaurant.append(
                     float(data[data.index("Restaurant Lunch Food") + index].replace(',', '')))
-                room_service = restaurant.append(
-                    float(data[data.index("Room Service Breakfast - Beverage") + index].replace(',', '')))
-                vending_machine = restaurant.append(
-                    float(data[data.index("Vending Machine Revenue-Drinks+snacks") + index].replace(',', '')))
-                venue_hire = restaurant.append(
-                    float(data[data.index("Vie Venue Hire") + index].replace(',', '')))
+
 
                 total = 0
 
