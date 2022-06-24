@@ -69,9 +69,11 @@ def main():
                     total += val
                 accommodation_total.append(round(total, 2))
 
+
                 upgrade = float(data[data.index("Accommodation upgrade") + index].replace(',', ''))
 
                 upgrade_total.append(upgrade)
+
 
                 parking = float(data[data.index("Car Park Charges") + index].replace(',', ''))
                 parking_total.append(parking)
@@ -81,7 +83,7 @@ def main():
                 RESTAURANTS = ["Child Full cooked breakfast", "Restaurant All Day Beverage", "Restaurant All Day Food",
                         "Restaurant Box breakfast", "Restaurant Breakfast Food", "Restaurant Dinner Beverage",
                         "Restaurant Dinner Food", "Restaurant Lunch Beverage", "Restaurant Lunch Food",
-                        "Room Service Breakfast - Beverage", "Vending Machine Revenue-Drinks+snacks", "Vie Venue Hire"]
+                        "Room Service Breakfast - Beverage", "Room service Dinner - Beverage", "Vending Machine Revenue-Drinks+snacks", "Vie Venue Hire"]
 
                 for restaurant_data in RESTAURANTS:
                     try:
