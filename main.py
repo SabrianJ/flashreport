@@ -54,7 +54,8 @@ def main():
                          "Accommodation-No Show", "Courier-on guest behalf",
                          "Credit card fees", "Drycleaning / Laundry Charges", "Guest Attrition Fees",
                          "Guest Cancellation Fees", "Hotel Shop Revenue",
-                         "Housekeeping Service", "Internet Charges", "Phone Charges", "Sofa Bed", "Sundry Income"]
+                         "Housekeeping Service", "Internet Charges", "Phone Charges", "Sofa Bed", "Sundry Income" ,
+                          "Transport Service Revenue"]
 
                 for accom_data in ACCOMS:
                     try:
